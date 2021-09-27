@@ -1,0 +1,537 @@
+/*--- General ---*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Public Sans", Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+  color: hsl(233, 8%, 62%);
+}
+a {
+  text-decoration: none;
+  color: hsl(233, 8%, 62%);
+}
+li {
+  list-style: none;
+}
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+}
+
+/*--- Mobile-Start ---*/
+
+@media (max-width: 480px) {
+  .nav-links {
+    display: none;
+  }
+  nav .btn {
+    display: none;
+  }
+  .menu-icon {
+    cursor: pointer;
+    display: flex;
+  }
+  .menu-icon:hover {
+    opacity: 0.7;
+  }
+  .menu-close {
+    display: none;
+  }
+  .navigation {
+    position: relative;
+    top: 0;
+    opacity: 1;
+    z-index: 200;
+    background: #fff;
+  }
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: linear-gradient(
+      to bottom,
+      hsla(233, 26%, 24%, 1),
+      hsla(233, 8%, 62%, 0.3)
+    );
+    background-position: center;
+    position: fixed;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    transition: ease 350ms;
+    top: -1200px;
+    position: absolute;
+    overflow-y: hidden;
+  }
+
+  .mobile-nav-links {
+    background: hsl(0, 0%, 100%);
+    width: 85vw;
+    margin: 2em auto 10em auto;
+    line-height: 2.5;
+    border-radius: 5px;
+    padding: 2em;
+    text-align: center;
+  }
+  .mobile-nav li a {
+    color: hsl(233, 26%, 24%);
+    font-weight: 600;
+  }
+  .mobile-nav-links li a:hover {
+    color: hsl(233, 8%, 62%);
+    transition: ease 10ms;
+    transform: scale(1.2);
+  }
+
+  /*--- Header ---*/
+  header {
+    background: hsl(0, 0%, 98%);
+    height: 100vh;
+  }
+
+  .bg-mockup {
+    background: url("./images/bg-intro-mobile.svg");
+    background-position: center;
+    background-size: cover;
+    max-height: 40vh;
+    width: 100%;
+    position: relative;
+  }
+  .bg-mockup img {
+    position: relative;
+    padding: 0 2.5% 0 2.5%;
+    width: 100%;
+    max-height: 60vh;
+    transform: translateY(-29%);
+  }
+  header h1 {
+    color: hsl(233, 26%, 24%);
+    font-weight: 400;
+    text-align: center;
+    margin: 0 auto 0.5em auto;
+    font-size: 2em;
+    letter-spacing: 1.5px;
+  }
+  .next-generation {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 2em;
+    text-align: center;
+  }
+  header .btn {
+    margin: 2em auto;
+  }
+  .why-choose-easybank {
+    text-align: center;
+  }
+  .easybank-benefits {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2em;
+    justify-content: center;
+    text-align: center;
+  }
+  .latest-articles {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 1.5em;
+    row-gap: 2em;
+    justify-content: center;
+    text-align: left;
+  }
+  footer {
+    background: hsl(233, 26%, 24%);
+    text-align: center;
+    display: grid;
+    align-self: space-between;
+    padding: 2em;
+  }
+  footer img,
+  li,
+  .btn {
+    margin-bottom: 1.5em;
+  }
+}
+
+/*--- Mobile-End ---*/
+
+/*--- Tablet-Start ---*/
+
+@media (max-width: 768px) and (min-width: 480px) {
+  .nav-links {
+    display: none;
+  }
+  nav .btn {
+    display: none;
+  }
+  .menu-icon {
+    cursor: pointer;
+    display: flex;
+  }
+  .menu-icon:hover {
+    opacity: 0.7;
+  }
+  .menu-close {
+    display: none;
+  }
+  .navigation {
+    position: relative;
+    top: 0;
+    opacity: 1;
+    z-index: 200;
+    background: #fff;
+  }
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: linear-gradient(
+      to bottom,
+      hsla(233, 26%, 24%, 1),
+      hsla(233, 8%, 62%, 0.3)
+    );
+    background-position: center;
+    position: fixed;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    transition: step-start 350ms;
+    top: -1200px;
+    position: absolute;
+    overflow-y: hidden;
+  }
+
+  .mobile-nav-links {
+    background: hsl(0, 0%, 100%);
+    width: 85vw;
+    margin: 2em auto 10em auto;
+    line-height: 2.5;
+    border-radius: 5px;
+    padding: 2em;
+    text-align: center;
+  }
+  .mobile-nav li a {
+    color: hsl(233, 26%, 24%);
+    font-weight: 600;
+  }
+  .mobile-nav-links li a:hover {
+    color: hsl(233, 8%, 62%);
+    transition: ease 10ms;
+  }
+
+  /*--- Header ---*/
+  header {
+    background: hsl(0, 0%, 98%);
+  }
+
+  .bg-mockup {
+    background: url("./images/bg-intro-mobile.svg");
+    background-position: center;
+    background-size: cover;
+    max-height: 53vh;
+    width: 100%;
+    position: relative;
+  }
+  .bg-mockup img {
+    position: relative;
+    padding: 0 5% 0 5%;
+    width: 100%;
+    max-height: 80vh;
+    transform: translateY(-29%);
+  }
+  header h1 {
+    color: hsl(233, 26%, 24%);
+    font-weight: 400;
+    text-align: center;
+    margin: 0 auto 0.5em auto;
+    font-size: 2em;
+    letter-spacing: 1.5px;
+  }
+  .next-generation {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 2em;
+    text-align: center;
+  }
+  header .btn {
+    margin: 2em auto;
+  }
+
+  .easybank-benefits {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2em;
+    column-gap: 1.5em;
+    justify-content: center;
+    text-align: left;
+  }
+  .latest-articles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5em;
+    row-gap: 2em;
+    justify-content: center;
+    text-align: left;
+  }
+  footer {
+    background: hsl(233, 26%, 24%);
+    text-align: center;
+    display: grid;
+    align-self: space-between;
+    padding: 2em;
+  }
+  footer img,
+  li,
+  .btn {
+    margin-bottom: 1.5em;
+  }
+}
+
+/*--- Tablet-End ---*/
+
+/*--- Desktop Start ---*/
+@media (min-width: 769px) {
+  nav {
+    overflow: hidden;
+  }
+  .menu-icon {
+    display: none;
+    margin-right: -27%;
+  }
+  .mobile-nav {
+    display: none;
+  }
+  .navigation {
+    position: relative;
+    top: 0;
+    opacity: 1;
+    z-index: 200;
+    background: #fff;
+  }
+  /*--- Header ---*/
+  header {
+    display: flex;
+    flex-direction: row-reverse;
+    background: hsl(0, 0%, 98%);
+    height: 65vh;
+    overflow-y: hidden;
+  }
+  .bg-mockup {
+    background: url("./images/bg-intro-desktop.svg");
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 80%;
+    min-width: 70%;
+    height: 105%;
+    margin-left: -10%;
+    transform: translate(22%, 0%);
+  }
+  .bg-mockup img {
+    position: absolute;
+    top: -15%;
+    left: 10%;
+    height: 130%;
+    width: 90%;
+    padding: 0 7%;
+    transform: translateY(-20% 10%);
+  }
+
+  header .next-generation {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    margin-left: 7%;
+    width: 32%;
+    text-align: left;
+  }
+  header h1 {
+    color: hsl(233, 26%, 24%);
+    font-weight: 300;
+    font-size: 2.2em;
+    letter-spacing: 1.5px;
+    width: 100%;
+  }
+  header p {
+    margin: 1em 0;
+  }
+  header .btn {
+    margin-left: 0;
+    align-self: flex-start;
+  }
+
+  .easybank-benefits {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5em;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .latest-articles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5em;
+    justify-content: center;
+    text-align: left;
+  }
+  footer {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    padding: 3% 7%;
+  }
+  footer * {
+    margin: 1em 0;
+    align-items: center;
+  }
+  .logo-and-socials {
+    grid-column: 1/3;
+  }
+  .footer-logo {
+    margin: 0 0 1em 0;
+  }
+  .footer-links {
+    text-align: right;
+    justify-content: space-between;
+  }
+
+  .btn-and-copy {
+    grid-column: 6/9;
+    text-align: right;
+  }
+}
+/*--- Desktop End ---*/
+
+/*--- Desktop and Mobile Start ---*/
+
+/*--- Nav ---*/
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1% 7%;
+  height: 50px;
+  font-size: 15px;
+}
+
+nav .nav-logo {
+  display: flex;
+  align-self: center;
+  width: 100%;
+}
+nav ul {
+  display: flex;
+  text-align: center;
+}
+nav ul li {
+  padding-right: 5%;
+}
+nav ul li a {
+  padding-bottom: 15px;
+  margin-bottom: 0;
+}
+
+nav ul li a:hover {
+  border-bottom: 2px solid hsl(192, 70%, 51%);
+}
+
+.nav-btn {
+  display: flex;
+  align-self: center;
+  margin-left: 7%;
+}
+
+.btn {
+  display: inline-block;
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+  border-radius: 20px;
+  background: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+  padding: 10px 26px;
+  text-align: center;
+  position: relative;
+}
+.btn:hover {
+  opacity: 0.7;
+}
+
+.why-easybank {
+  background: hsl(220, 16%, 96%);
+  padding: 5% 7%;
+  text-align: left;
+}
+.why-choose-easybank {
+  padding-bottom: 3em;
+}
+
+.why-easybank h2,
+h3 {
+  color: hsl(233, 26%, 24%);
+  padding: 1em 0;
+  font-weight: 300;
+}
+.articles {
+  background: hsl(0, 0%, 98%);
+  padding: 5% 7%;
+  text-align: left;
+}
+.articles h2,
+h4 {
+  color: hsl(233, 26%, 24%);
+  padding: 1em 0;
+  font-weight: 300;
+}
+figcaption {
+  font-size: 0.7em;
+  padding: 1em 0 0 1.5em;
+}
+
+.latest-articles div {
+  background: hsl(0, 0%, 100%);
+  border-radius: 0.3em;
+  padding-bottom: 2em;
+}
+.latest-articles div img {
+  width: 100%;
+  height: 13em;
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+}
+.latest-articles h4 {
+  padding: 1em;
+}
+.latest-articles p {
+  padding: 0 1em;
+}
+
+footer {
+  background: hsl(233, 26%, 24%);
+}
+.footer-logo {
+  color: hsl(0, 0%, 100%);
+}
+footer li a {
+  color: hsl(0, 0%, 100%);
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  background: hsl(233, 26%, 24%);
+  padding-bottom: 1em;
+}
+.attribution a {
+  color: hsl(0, 0%, 100%);
+}
