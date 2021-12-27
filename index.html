@@ -8,10 +8,9 @@
     hsl(210, 78%, 56%),
     hsl(146, 68%, 55%)
   )"> 
-<!-- displays site properly based on user's device -->
 <link rel="stylesheet" href="style.css">
  <link rel="stylesheet" href="https://fonts.google.com/specimen/Public+Sans">
-  <title>Easybank</title>
+  <title>Easybank Landing Page</title>
 </head>
 
 <body>
@@ -19,11 +18,11 @@
 <section class="container"> 
 
 <!-- Nav Bar -->
-<section class="navigation">
-  <nav>
-    <a href="#"><img src="./images/logo.svg" class="nav-logo" alt="Easybank Logo"></a>
 
-    <!-- Nav Bar -->
+  <nav class="nav">
+    <a href="#"><img src="./images/logo.svg" class="nav-logo" alt="Easybank Logo"></a>
+    
+    <div class="menu">
       <ul class="nav-links">
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
@@ -35,27 +34,13 @@
       <a href="" class="btn nav-btn">
         Request Invite
       </a>
-      
-        <img src="./images/icon-close.svg" alt="" class="menu-icon menu-close" id="navClose" onclick= "closeNavMenu();"> 
-
-        <img src="./images/icon-hamburger.svg" alt="" class="menu-icon menu-open" id="navOpen" onclick= "openNavMenu();">
-      
+    </div>
+     
+      <button class="
+      toggle-menu"></button>
           
   </nav>
-</section>
-<section class="mobile-nav " id="navLinks">
-  <div>
-    <ul class="mobile-nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Careers</a></li>
-    </ul>
 
-  </div>
- 
-</section>
 <!-- Header Start-->
 <header class="intro row">
 
@@ -75,9 +60,6 @@
 </header>
 
 <!-- Header End-->
-<section class="">
-
-</section>
 
   <!-- Why Easy Bank? Start-->
   <section class="why-easybank">
@@ -209,50 +191,70 @@
 
 <div class="attribution">
   Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-  Coded by <a href="#">Abdulrasheed</a>.
+  Coded by <a href="https://abdulrasheedadediran.netlify.app">Abdulrasheed Adediran</a>.
 </div>
 
 
   <!-- Footer End-->
 </section> <!-- End of Container-->
   <script>
-    let navLinks = document.getElementById("navLinks") 
-    let navOpen = document.getElementById("navOpen") 
-    let navClose = document.getElementById("navClose")
-  
-
-    // Push nav links off screen on mobile and tablets
-    function hideMenu(){
-      navLinks.style.top = "-1200px"
-
-    }
-
-    // Display nav links on mobile and tablets
-    function showMenu(){
-      navLinks.style.top = "50px"
-    }
-  
-    function displayOpenIcon(){
-    navClose.style.display = "none"
-    navOpen.style.display = "flex"
     
-    }
+    const nav = document.querySelector('nav')
+    const navMenu = document.querySelector('.menu')
+    const toggleMenu = document.querySelector('.toggle-menu')
+  
 
+    // Nav toggle
+    toggleMenu.addEventListener('click', () =>{
+      displayMenu()
+      displayCloseIcon()
+    })
+
+    function displayMenu(){
+    navMenu.classList.toggle('show')
+
+    // Disable background interactivity 
+                
+        // Fixed body position when menu is open
+        if(navMenu.classList.contains('show')){
+                const scrollY = document.documentElement.style.getPropertyValue('--scroll-y')
+                const body = document.body 
+                body.style.position = 'fixed'
+                body.style.top = `-${scrollY}`
+            } else{
+            // Maintain current position when menu is hidden
+            const body = document.body 
+            const scrollY = body.style.top
+            body.style.position = ''
+            body.style.top = ''
+            body.style.position = ''
+            window.scrollTo(0, parseInt(scrollY || '0') * -1)
+            }
+       }
+
+       window.addEventListener('scroll', () =>{
+       document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`)
+        })
+    
     function displayCloseIcon(){
-    navOpen.style.display = "none"
-    navClose.style.display = "flex"
-    
+    toggleMenu.classList.toggle('close')
     }
     
-    function openNavMenu(){
-        showMenu()
-        displayCloseIcon ()
-    }
-
-    function closeNavMenu(){
-        hideMenu()
-        displayOpenIcon()
-    }
+    // Store top position
+    let lastScrollTop
+        // Called on every scroll
+        window.addEventListener('scroll', function(){
+           
+            // Get location on scroll
+            const scrollTop = window.scrollY || document.documentElement.scrollTop
+            if(scrollTop > lastScrollTop){
+              nav.style.top = '-10%'
+            } else{
+                nav.style.top = '0'
+            }
+            lastScrollTop = scrollTop
+        })
+     
  </script>
 </body>
 </html>
