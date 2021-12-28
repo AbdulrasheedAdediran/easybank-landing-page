@@ -24,11 +24,11 @@
     
     <div class="menu">
       <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Careers</a></li>
+        <li><a href="#" class="navLink">Home</a></li>
+        <li><a href="#" class="navLink">About</a></li>
+        <li><a href="#" class="navLink">Contact</a></li>
+        <li><a href="#" class="navLink">Blog</a></li>
+        <li><a href="#" class="navLink">Careers</a></li>
       </ul>
     
       <a href="" class="btn nav-btn">
@@ -187,12 +187,14 @@
     <p>© Easybank. All Rights Reserved</p>
    </div>
 
+   
+   <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://abdulrasheedadediran.netlify.app">Abdulrasheed Adediran</a>.
+  </div>
 </footer>
 
-<div class="attribution">
-  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-  Coded by <a href="https://abdulrasheedadediran.netlify.app">Abdulrasheed Adediran</a>.
-</div>
+
 
 
   <!-- Footer End-->
@@ -202,6 +204,7 @@
     const nav = document.querySelector('nav')
     const navMenu = document.querySelector('.menu')
     const toggleMenu = document.querySelector('.toggle-menu')
+    const navLinks = document.querySelectorAll('.navLink')
   
 
     // Nav toggle
@@ -210,8 +213,14 @@
       displayCloseIcon()
     })
 
+    // Switch menu icon to close icon
+    function displayCloseIcon(){
+      toggleMenu.classList.toggle('close')
+    }
+    
     function displayMenu(){
     navMenu.classList.toggle('show')
+
 
     // Disable background interactivity 
                 
@@ -236,10 +245,9 @@
        document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`)
         })
     
-    function displayCloseIcon(){
-    toggleMenu.classList.toggle('close')
-    }
     
+        
+    // Hide nav when scrolling down and display when scrolled up
     // Store top position
     let lastScrollTop
         // Called on every scroll
@@ -255,6 +263,12 @@
             lastScrollTop = scrollTop
         })
      
+        // Close menu when link is clicked
+        navLinks.forEach(
+               function(navLink) {
+                navLink.addEventListener('click', displayMenu)
+               }
+           )
  </script>
 </body>
 </html>
