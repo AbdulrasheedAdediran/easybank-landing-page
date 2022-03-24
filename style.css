@@ -161,12 +161,12 @@ footer li a {
   color: hsl(0, 0%, 100%);
 }
 
-.login{
+/* .login{
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 
 /*--- Desktop Start ---*/
