@@ -166,7 +166,8 @@ footer li a {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 75%;
+  max-width: 50%;
+  margin: auto;
 }
 
 
