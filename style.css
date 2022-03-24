@@ -162,12 +162,20 @@ footer li a {
 }
 
 .login{
+  background-color: rgb(0, 17, 5);
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 50%;
   margin: auto;
+}
+.login .next-generation{
+  width: 50%;
+}
+
+.login .next-generation h1 p{
+  margin: 2rem;
 }
 
 
