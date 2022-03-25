@@ -167,7 +167,7 @@ footer li a {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 50%;
+  max-width: 75%;
   margin: auto;
 }
 .login .next-generation{
@@ -175,7 +175,13 @@ footer li a {
 }
 
 .login .next-generation h1, p{
-  margin: 2rem;
+  margin: 2rem 0;
+  color: #fff;
+}
+.login .next-generation button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -517,6 +523,12 @@ footer li a {
   .btn {
     margin-bottom: 1.5em;
   }
+  .login{
+  max-width: 95%;
+}
+.login .next-generation{
+  width: 95%;
+}
 }
 
 /*--- Mobile-End ---*/
