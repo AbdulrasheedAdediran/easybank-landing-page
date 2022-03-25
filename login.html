@@ -17,7 +17,7 @@
     <h1>Next generation <br> digital banking</h1>
     <p>Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing, and much more.
     </p>
-    <a href="/login.html" class="btn login_btn" onclick="login()">
+    <a href="" class="btn login_btn" onclick="login()">
       Get Started
     </a>
       <!-- <button class="btn login_btn" onclick="login()">Login</button>
@@ -28,6 +28,7 @@
       
 </body>
 
+      
       <script src="https://ajs.radius.africa/authx.js"></script>
       <script type="text/javascript">
         function loginHandler (session, message) {
@@ -35,7 +36,7 @@
             console.log('Session = ', authx.getSession())
         }
         const authx = AuthX("woyXw0ePfgBIJEW50zH7vwODKHDKWYiMOjLVxSJf", {
-            redirect_uri: "https://fem-easybanklandingpage.netlify.app",
+            redirect_uri: "https://fem-easybanklandingpage.netlify.app/landingPage.html",
             locale: 'en',
             isSpa: true,
             onComplete: loginHandler,

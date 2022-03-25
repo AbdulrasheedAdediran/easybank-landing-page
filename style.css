@@ -174,7 +174,7 @@ footer li a {
   width: 50%;
 }
 
-.login .next-generation h1 p{
+.login .next-generation h1, p{
   margin: 2rem;
 }
 
